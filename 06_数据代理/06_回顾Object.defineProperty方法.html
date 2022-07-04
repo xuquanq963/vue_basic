@@ -14,7 +14,8 @@
         }
 
         Object.defineProperty(person,'age',{
-            value:18
+            value:18,
+            enumerable:true,    //控制属性是否可以枚举，默认值是false
         })
         console.log(person);
     </script>
