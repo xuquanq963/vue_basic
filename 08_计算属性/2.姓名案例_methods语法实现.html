@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>姓名案例_插值语法案例</title>
+    <title>姓名案例_methods语法实现</title>
     <!-- 引入Vue -->
     <script src="../js/vue.js"></script>
 </head>
@@ -13,7 +13,7 @@
     <div id="root">
         姓：<input type="text" v-model="firstName"><br>
         名：<input type="text" v-model="lastName"><br>
-        全名：<span>{{firstName.slice(0,3)}}-{{lastName}}</span>
+        全名：<span>{{fullName()}}</span>
     </div>
 </body>
 <script>
@@ -24,6 +24,11 @@
         data:{
             firstName:'张',
             lastName:'三'
+        },
+        methods:{
+            fullName(){
+                return this.firstName + '-' + this.lastName
+            }
         }
     })
 </script>
