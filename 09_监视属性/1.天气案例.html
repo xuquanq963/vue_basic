@@ -11,8 +11,10 @@
 <body>
         <!-- 准备好一个容器 -->
         <div id="root">
-            <h2>今天天气很{{}}</h2>
-            <button>切换天气</button>>
+            <h2>今天天气很{{info}}</h2>
+            <!-- @xxx = "yyy" yyy可以写一些简单的语句 -->
+            <!-- <button @click="isHot = !isHot">切换天气</button> -->
+            <button @click="changeWeather">切换天气</button>
         </div>
 </body>
 
@@ -24,7 +26,18 @@
         el:'#root',
         data:{
             isHot:true
-        }
+        },
+        computed: {
+            info(){
+                return this.isHot? '炎热' : '凉爽'
+            }
+        },
+        methods: {
+            changeWeather(){
+                this.isHot = !this.isHot
+            }
+        },
+        
     })
 </script>
 </html>
